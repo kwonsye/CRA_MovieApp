@@ -37,8 +37,8 @@ const StyledLink = styled(Link)`
   justify-content: center;
 `;
 
-//withRouter에 컴포넌트를 감싸면 현재 라우터에 대한 정보를 props를 받을 수 있다. //withRouter()는 <Router />안에서만
-//사용할 수 있다.
+//withRouter에 컴포넌트를 감싸면 현재 라우터에 대한 정보를 props를 받을 수 있다. 
+//withRouter()는 <Router />안에서만 사용할 수 있다.
 
 export default withRouter(( {location : {pathname}}) => (
     //현재 라우터의 위치를 받아와서
