@@ -52,7 +52,7 @@ export default class extends React.Component {
             })
         }
         
-        //console.log(this.state); //잘 들어갔는지 확인!
+        console.log(this.state); //잘 들어갔는지 확인!
     }
 
     render() {
