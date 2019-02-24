@@ -19,6 +19,15 @@
     yarn add axios
     ```
 - 파일 구성 (추가예정)
+    - `Components`
+    - `Routes`
+        - `Home`
+        - `TVShow`
+        - `Search`
+        - `Detail`
+
+    - `api.js`
+    - `index.js`
 
 - 리액트 디자인 패턴
     - <b>Container-Presenter 패턴</b> 사용

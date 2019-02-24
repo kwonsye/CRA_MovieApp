@@ -33,6 +33,9 @@ export default class extends React.Component {
 
     _getSearchByTitle = async () => {
         const { searchTitle } = this.state;
+        this.setSate({
+            loading :true,
+        })
         try {
             const movieResults = await movieApi.searchMovie(searchTitle);
             const tvResults = await tvshowApi.searchTV(searchTitle);
