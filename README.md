@@ -20,8 +20,14 @@
     ```
 - 파일 구성 (추가예정)
     - `Components`
+        - `App.js`
+        - `Header.js`
+        - `Loader.js`
+        - `Router.js`
+        - `Section.js`
+        -  `GlobalStyles.js`
     - `Routes`
-        - `Home`
+        - `Home` 
         - `TVShow`
         - `Search`
         - `Detail`
