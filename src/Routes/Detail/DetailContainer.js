@@ -8,7 +8,7 @@ export default class extends React.Component {
     //생성자
     constructor(props){
         super(props);
-
+        //console.log(props)
         const {location : {pathname}} = props;
         this.state = {
             result : null,
@@ -41,7 +41,7 @@ export default class extends React.Component {
             } else {
                 ({data : result}= await tvshowApi.tvDetail(parsedId)); // ()로 묶어줘야 let의 result에 대입할 수 있다.
             }
-            console.log(result);
+            //console.log(result);
         } catch(error) {
             this.setState({
                 error : "Can't find anything"

@@ -39,6 +39,7 @@ export default class extends React.Component {
     //컴포넌트가 마운트되면 api로부터 데이터를 가져온다.
     async componentDidMount() {
         try{
+            //throw Error();
             await this._getTopRated();
             await this._getPopular();
             await this._getAiringToday();

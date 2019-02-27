@@ -21,7 +21,7 @@ const Grid = styled.div`
     grid-gap : 25px;
 `;
 
-//children은 예약어이다.
+//children은 예약어이다. <Section> </Section> 사이에 오는 게 childredn이 된다.
 const Section = ({title, children}) => (
     <Container>
         <Title>{title}</Title>

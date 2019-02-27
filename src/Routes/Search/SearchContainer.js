@@ -10,6 +10,7 @@ export default class extends React.Component {
         loading : false, //false일때는 검색 입력폼을 render, true일때는 검색 결과를 보여줄 것이다.
         error : null,
         searchTitle : "", //사용자가 검색할 제목 sumit을 하면 setState 해줄 것임
+        pastTitle : "",
     }
     //presenter에서 submit했을때 넘겨줄 함수
     _handleSubmit = (event) => { //event가 들어옴
@@ -17,6 +18,9 @@ export default class extends React.Component {
         //우리는 state을 잃지 않고 가져와야하므로 이벤트를 가로채야한다.
         
         const {searchTitle} = this.state;
+        this.setState({
+            pastTitle : searchTitle,
+        })
         if(searchTitle !== ""){
             this._getSearchByTitle();
         }
@@ -33,12 +37,13 @@ export default class extends React.Component {
 
     _getSearchByTitle = async () => {
         const { searchTitle } = this.state;
-        this.setSate({
+        this.setState({
             loading :true,
         })
         try {
-            const movieResults = await movieApi.searchMovie(searchTitle);
-            const tvResults = await tvshowApi.searchTV(searchTitle);
+            //throw Error();
+            const {data : {results : movieResults}} = await movieApi.searchMovie(searchTitle);
+            const {data : {results : tvResults}} = await tvshowApi.searchTV(searchTitle);
             this.setState({
                 movieResults,
                 tvResults,
@@ -57,7 +62,7 @@ export default class extends React.Component {
     }
     
     render() {
-        const {movieResults, tvResults, loading, error, searchTitle} = this.state;
+        const {movieResults, tvResults, loading, error, searchTitle,pastTitle} = this.state;
 
         return(
             <SearchPresenter
@@ -68,6 +73,7 @@ export default class extends React.Component {
                 searchTitle={searchTitle}
                 handleSubmit={this._handleSubmit}  
                 updateTitle = {this._updateTitle} 
+                pastTitle = {pastTitle}
             />
         )
     }
