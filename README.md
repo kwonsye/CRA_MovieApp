@@ -21,8 +21,8 @@
 - 파일 구성 (추가예정)
     - `Components`
         - `App.js`
-        - `Header.js`
-        - `Loader.js`
+        - `Header.js` : 헤더 컴포넌트 - 모든 page에 적용됨
+        - `Loader.js` : api에서 데이터를 로드할 때 로딩페이지를 그려주는 컴포넌트
         - `Router.js`
         - `Section.js`
         - `Error.js`
