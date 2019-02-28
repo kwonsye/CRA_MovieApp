@@ -25,12 +25,26 @@
         - `Loader.js`
         - `Router.js`
         - `Section.js`
-        -  `GlobalStyles.js`
+        - `Error.js`
+        - `NotFound.js`
+        - `GlobalStyles.js`
     - `Routes`
-        - `Home` 
-        - `TVShow`
-        - `Search`
-        - `Detail`
+        - `Home` : <b>영화 page</b>
+            - `index.js`
+            - `HomeContainer.js`
+            - `HomePresenter.js`
+        - `TVShow` : <b>TV프로그램 page</b>
+            - `index.js`
+            - `TVShowContainer.js`
+            - `TVShowPresenter.js`
+        - `Search` : <b>영화 & TV프로그램 제목 검색 page</b>
+            - `index.js`
+            - `SearchContainer.js`
+            - `SearchPresenter.js`
+        - `Detail` : <b>영화 or TV프로그램 상세정보 page</b>
+            - `index.js`
+            - `DetailContainer.js`
+            - `DetailPresenter.js`
 
     - `api.js`
     - `index.js`
