@@ -22,8 +22,9 @@
     "deploy" : "gh-pages -d build",
     "predeploy" : "yarn run build"
   },
-  "homepage" :"http://kwonsye.github.io/CRA_MovieApp",
-  
+
+  "homepage" :"https://brave-euclid-ab2f72.netlify.com/",
+
   "eslintConfig": {
     "extends": "react-app"
   },

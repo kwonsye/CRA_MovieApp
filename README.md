@@ -103,6 +103,9 @@
     4. 확인!!! (시간이 조금 걸린다.)<p>
     <a href="http://kwonsye.github.io/CRA_MovieApp">http://kwonsye.github.io/CRA_MovieApp</a>
 
+- Netlify 를 이용해서 deploy하기
+    - <a href="https://www.netlify.com/">https://www.netlify.com/</a>
+    - deploy 방법은 <a href="https://kwonsye.github.io/">블로그</a>에 설명해놓았다.
 
 
 - 천천히 해볼 과제
