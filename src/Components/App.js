@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <Fragment>
         <Router />
-        <GlobalStyles />
+        <GlobalStyles /> {/*전체 스타일 적용 */}
       </Fragment>
     );
   }
