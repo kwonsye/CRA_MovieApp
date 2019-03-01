@@ -7,7 +7,7 @@ import Error from "Components/Error";
 import Poster from "Components/Poster";
 
 const Container = styled.div`
-    padding : 0px 20px;
+    padding : 20px;
 `;
 
 const TVShowPresenter = ({topRated, popular, airingToday, error, loading}) => loading ? <Loader /> :(

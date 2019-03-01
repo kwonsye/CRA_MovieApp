@@ -14,7 +14,7 @@ const Image = styled.div`
     background-size : cover;
     height : 180px;
     transition : opacity 0.2s linear;
-    background-position : center;
+    background-position : center center;
     border-radius : 4px;
 `;
 

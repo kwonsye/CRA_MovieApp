@@ -8,7 +8,7 @@ export default class extends React.Component {
     //생성자
     constructor(props){
         super(props);
-        //console.log(props)
+        //console.log(props) //url에 대한 정보가 props로 넘어온다.
         const {location : {pathname}} = props;
         this.state = {
             result : null,
@@ -25,8 +25,7 @@ export default class extends React.Component {
             //location : { pathname }, //위 예시에서의 /movie/14이다.
             match : {params : {id}}, //여기서 id가 위 에시에서의 14이다.
             history : {push}, //url을 파라미터로 넘긴 값으로 보내주는 push함수를 가져온다.
-        } = this.props; 
-
+        } = this.props;
         const parsedId = parseInt(id);
         if(isNaN(parsedId)){ //id가 숫자가 아니면
             return push("/"); //홈으로 보내준다.
@@ -51,13 +50,13 @@ export default class extends React.Component {
                 loading : false,
                 result,
             })
+            console.log(this.state.result)
         }
     }
 
     render(){
         const {result , error, loading} = this.state;
-        //console.log(this.props); //Router가 현재 위치에 대한 정보를 props로 준다.
-
+        //console.log(this.props); //Router가 현재 위치에 대한 정보를 props로 준다.     
         return(
             <DetailPresenter result={result} error={error} loading={loading} />
         )

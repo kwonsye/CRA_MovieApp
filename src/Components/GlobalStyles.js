@@ -17,7 +17,7 @@ const globalStyle = createGlobalStyle`
         font-size:12px;
         background-color:rgba(20, 20, 20, 1);
         color:white;
-        padding-top:70px;
+        padding-top:50px;
     }
 `
 //The CSS box-sizing :border-box property allows us to include the padding and border in an element's total width and height.
