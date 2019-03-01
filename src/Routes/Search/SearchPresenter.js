@@ -32,11 +32,25 @@ const SearchPresenter = ({movieResults, tvResults, loading, error, searchTitle, 
             <Fragment>
             {movieResults && movieResults.length>0 && 
                 <Section title="Movie Results">
-                    {movieResults.map(movie => <Poster />)}
+                    {movieResults.map(movie =>
+                         <Poster key={movie.id} 
+                         id={movie.id}
+                         title={movie.title}
+                         imageUrl={movie.poster_path} 
+                         year={movie.release_date && movie.release_date.substring(0,4)} 
+                         rating={movie.vote_average}
+                         isMovie = {true}/>)}
                 </Section>}
             {tvResults && tvResults.length>0 &&
                 <Section title="TV Show Results">
-                    {tvResults.map(tv => <Poster />)}
+                    {tvResults.map(tv =>
+                        <Poster key={tv.id} 
+                        id={tv.id}
+                        title={tv.original_name}
+                        imageUrl={tv.poster_path} 
+                        year={tv.first_air_date && tv.first_air_date.substring(0,4)} 
+                        rating={tv.vote_average}
+                        isMovie = {false}/>)}
                 </Section>}   
             {error && <Error text={error}/>} 
             {movieResults && tvResults && movieResults.length === 0 && tvResults.length === 0 && 
