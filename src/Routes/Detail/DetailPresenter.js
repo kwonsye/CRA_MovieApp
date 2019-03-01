@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Loader from "Components/Loader";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
     position : relative;
@@ -47,6 +48,7 @@ const Data = styled.div`
 
 const Title = styled.h3`
     font-size : 50px;
+    opacity : 1;
 `;
 
 const InfoContainer = styled.div`
@@ -72,6 +74,9 @@ const Divider = styled.span`
 const DetailPresenter = ({result , error, loading}) => (
     loading ? (<Loader />) : 
     (<Container>
+        <Helmet>
+            <title>{result.original_title ? result.original_title : result.original_name } </title>
+        </Helmet>
         <Backdrop backdropImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}></Backdrop>
         <Content>
             <Cover imageUrl={ result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("../../assets/bread.JPG")}></Cover>

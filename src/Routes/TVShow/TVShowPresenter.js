@@ -5,12 +5,18 @@ import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Error from "Components/Error";
 import Poster from "Components/Poster";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
     padding : 20px;
 `;
 
-const TVShowPresenter = ({topRated, popular, airingToday, error, loading}) => loading ? <Loader /> :(
+const TVShowPresenter = ({topRated, popular, airingToday, error, loading}) => (
+    <>
+    <Helmet>
+        <title>Happy TV!</title>
+    </Helmet>
+    {loading ? <Loader /> :(
     <Container>
         {topRated && topRated.length>0 && 
         <Section title="Top Rated">
@@ -47,6 +53,8 @@ const TVShowPresenter = ({topRated, popular, airingToday, error, loading}) => lo
         </Section>}
         {error && <Error text={error}/>}
     </Container>
+    )}
+    </>
 );
 
 TVShowPresenter.propTypes ={

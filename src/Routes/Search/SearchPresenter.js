@@ -6,6 +6,7 @@ import Section from "Components/Section";
 import Error from "Components/Error";
 import NotFound from "Components/NotFound";
 import Poster from "Components/Poster";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
     padding : 20px;
@@ -24,6 +25,12 @@ const Input = styled.input`
 `;
 //확장 : 전에 검색했던 제목을 저장해놓는 pastTitle 만들기 -> 완료!
 const SearchPresenter = ({movieResults, tvResults, loading, error, searchTitle, handleSubmit, updateTitle, pastTitle}) => (
+    
+    <>
+    <Helmet>
+        <title>Search Anything</title>
+    </Helmet>
+    
     <Container>
         <Form onSubmit={handleSubmit}>
             <Input placeholder="Search Movies or TVShows..." value={searchTitle} onChange={updateTitle}></Input>
@@ -58,6 +65,7 @@ const SearchPresenter = ({movieResults, tvResults, loading, error, searchTitle, 
             </Fragment>
         )}
     </Container>
+    </>
 );
 
 SearchPresenter.propTypes = {

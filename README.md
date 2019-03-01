@@ -1,10 +1,14 @@
 ## CRA_Movie_App
 ---
-- create-react-app 사용
+- `create-react-app` 사용
     ```
     yarn global add npx
     npm i npx -g
     npx create-react-app cra_movie_app 
+    ```
+- `react-router-dom` 사용 : `Router.js`에서 각 **url**에 해당하는 **컴포넌트**로 이동할 수 있게 라우터 지정
+    ```
+    yarn add react-router-dom
     ```
 - Style
     - styled-components 사용
@@ -17,6 +21,10 @@
     - `axios` 를 사용해서 fetch
     ```
     yarn add axios
+    ```
+- `react-helmet` 사용 : 현재 컴포넌트에 따라 페이지의 **header title** 을 바꿀 수 있다.
+    ```
+    yarn add react-helmet
     ```
 - 파일 구성 (추가예정)
     - `Components`
