@@ -78,6 +78,33 @@
             - 스타일
             - function component
 
+- 깃허브 페이지에 deploy 하기
+    1. `gh-pages` 설치
+    ```
+    yarn add gh-pages
+    ```
+    2. `package.json` 수정
+    ```
+    "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy" : "gh-pages -d build",
+    "predeploy" : "yarn run build"
+    },
+    "homepage" :"http://kwonsye.github.io/CRA_MovieApp",
+    ```
+    3. deploy 실행
+    ```
+    yarn deploy
+    ```
+
+    4. 확인!!! (시간이 조금 걸린다.)<p>
+    <a href="http://kwonsye.github.io/CRA_MovieApp">http://kwonsye.github.io/CRA_MovieApp</a>
+
+
+
 - 천천히 해볼 과제
     - Detail Component
         1. 버튼 만들고 {imdb_id} 로 IMDB Link 연결하기 (https://www.imdb.com/title/{imdb_id})
