@@ -40,12 +40,60 @@ const Cover = styled.div`
     border-radius: 5px;
 `;
 
+const Data = styled.div`
+    width : 70%;
+    margin-left : 10px;
+`;
+
+const Title = styled.h3`
+    font-size : 50px;
+`;
+
+const InfoContainer = styled.div`
+    font-size : 15px;
+    margin : 20px 0px;
+`;
+
+const Info = styled.span`
+    margin : 10px;
+`;
+
+const Overview = styled.p`
+    font-size : 17px;
+    line-height : 24px;
+    width : 70%;
+    opacity: 0.7;
+`;
+
+const Divider = styled.span`
+    margin : 0 3px;
+`;
+
 const DetailPresenter = ({result , error, loading}) => (
     loading ? (<Loader />) : 
     (<Container>
         <Backdrop backdropImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}></Backdrop>
         <Content>
             <Cover imageUrl={ result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("../../assets/bread.JPG")}></Cover>
+            <Data>
+                <Title>
+                    {result.original_title ? result.original_title : result.original_name}
+                </Title>
+
+                <InfoContainer>
+                    <Info>{(result.release_date || result.first_air_date) && result.release_date ? result.release_date.substring(0,4) : result.first_air_date.substring(0,4)}</Info>
+                    <Divider>•</Divider> 
+                    <Info>{(result.runtime || result.episode_run_time) && result.runtime ? result.runtime : result.episode_run_time[0]} min</Info>
+                    <Divider>•</Divider>
+                    <Info>{result.genres && result.genres.map((genre, index) => 
+                                                    index === result.genres.length - 1 ? genre.name : `${genre.name} / `)}                                   
+                    </Info>
+                </InfoContainer>
+
+                <Overview>
+                        {result.overview}
+                </Overview>
+            </Data>
         </Content>
     </Container>)
 );
