@@ -1,5 +1,8 @@
 ## CRA_Movie_App
----
+
+- 깃허브 배포 페이지 <a href="http://kwonsye.github.io/CRA_MovieApp">http://kwonsye.github.io/CRA_MovieApp</a>
+- Netlify 배포 페이지 <a href="https://brave-euclid-ab2f72.netlify.com/">https://brave-euclid-ab2f72.netlify.com/</a>
+
 - `create-react-app` 사용
     ```
     yarn global add npx
@@ -103,32 +106,39 @@
     4. 확인!!! (시간이 조금 걸린다.)<p>
     <a href="http://kwonsye.github.io/CRA_MovieApp">http://kwonsye.github.io/CRA_MovieApp</a>
 
-- Netlify 를 이용해서 deploy하기
-    - <a href="https://www.netlify.com/">https://www.netlify.com/</a>
-    - deploy 방법은 <a href="https://kwonsye.github.io/">블로그</a>에 설명해놓았다.
+- <a href="https://www.netlify.com/">Netlify</a> 를 이용해서 deploy하기
+    - deploy 방법은 <a href="https://kwonsye.github.io/study%20note/2019/03/02/netlify.html">블로그</a>에 설명해놓았다. :)
+    - github 해당 repo에 push 할 때마다 자동으로 다시 `build` 후 netlify 페이지에 deploy 된다!
 
+    - 참고 ) netlify에 deploy하기 위해 `package.json`의 `homepage`를 **gh-pages 주소**에서 **netlify에서 준 url로**<u>변경</u>했다. <p> 
+    따라서 위의 깃허브 페이지 url로 들어가면 안 들어가질 것이라고 생각했는데 들어가진다..? 이유가 뭐지??<p>
+    => git 변경 사항에 대해 `yarn deploy`를 안했기 때문에 이전에 deploy한 소스가 `gh-pages` branch에 유지되고 있기 때문. <p>
+    `netlify`는 push와 동시에 deploy 명령어를 실행하는 것과 달리 `gh-pages`는 코드를 수정할 때마다 직접 `yarn deploy`를 해야한다.
 
-- 천천히 해볼 과제
-    - Detail Component
-        1. 버튼 만들고 {imdb_id} 로 IMDB Link 연결하기 (https://www.imdb.com/title/{imdb_id})
-        2. Overview 하단에 탭추가
-            - 유튜브 비디오
-            - 제작 국가 + 국기(?)
-            - 제작회사 + 로고
-        3. **Movie** 시리즈 볼수 있는 링크걸기
-            - 링크 클릭하면 `/collections` 로 이동할 수 있는 Route 생성 {belongs_to_collection : {id}}
-            - {id}로 Collection 상세 정보 가져오기(api-doc)
-            https://developers.themoviedb.org/3/collections/get-collection-details
-            - 포스터 이미지 가져오는 url 예시
-            (https://image.tmdb.org/t/p/w300/{belongs_to_collection})
+<br>
 
-        4. **TVShow** 
-            - 시즌들 보여주기 
-                - {seasons}
-            - 제작자에 대한 정보+사진
-                - {created_by}
-                - 이미지 가져오는 url 예시
-                (https://image.tmdb.org/t/p/w300/{profile_path})
-            - {networks} 보여주기
+### 천천히 해볼 과제
+---
+- Detail Component
+    1. 버튼 만들고 {imdb_id} 로 IMDB Link 연결하기 (https://www.imdb.com/title/{imdb_id})
+    2. Overview 하단에 탭추가
+        - 유튜브 비디오
+        - 제작 국가 + 국기(?)
+        - 제작회사 + 로고
+    3. **Movie** 시리즈 볼수 있는 링크걸기
+        - 링크 클릭하면 `/collections` 로 이동할 수 있는 Route 생성 {belongs_to_collection : {id}}
+        - {id}로 Collection 상세 정보 가져오기(api-doc)
+        https://developers.themoviedb.org/3/collections/get-collection-details
+        - 포스터 이미지 가져오는 url 예시
+        (https://image.tmdb.org/t/p/w300/{belongs_to_collection})
+
+    4. **TVShow** 
+        - 시즌들 보여주기 
+            - {seasons}
+        - 제작자에 대한 정보+사진
+            - {created_by}
+            - 이미지 가져오는 url 예시
+            (https://image.tmdb.org/t/p/w300/{profile_path})
+        - {networks} 보여주기
 
             
